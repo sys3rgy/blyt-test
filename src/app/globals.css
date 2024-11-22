@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: black;
+  background: #f5f5fa;
+}
+
+/* ! Swiper CSS For SwiperForAdSection1 */
+.swiperForAdSection1 .swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiperForAdSection1 .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: transparent;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiperForAdSection1 .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiperForAdSection1 .swiper-button-prev,
+.swiperForAdSection1 .swiper-button-next {
+  width: auto;
+  filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+}
+
+.swiperForAdSection1 .swiper-button-prev::after,
+.swiperForAdSection1 .swiper-button-next::after,
+.swiperForReviewsSlicerComponent .swiper-button-prev::after,
+.swiperForReviewsSlicerComponent .swiper-button-next::after {
+  min-width: 40px;
+  max-height: 40px;
+  background-size: 100% 100%;
+  color: transparent;
+  filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+}
+
+.swiperForAdSection1 .swiper-button-prev::after,
+.swiperForReviewsSlicerComponent .swiper-button-prev::after {
+  background-image: url("../../public/images/CommonImages/arrow-in-box-icon-1.png");
+}
+
+.swiperForAdSection1 .swiper-button-next::after,
+.swiperForReviewsSlicerComponent .swiper-button-next::after {
+  background-image: url("../../public/images/CommonImages/arrow-in-box-icon-1.png");
+  rotate: 180deg;
+}
+
+.swiperForAdSection1 .swiper-pagination-bullet-active-next,
+.swiperForReviewsSlicerComponent .swiper-pagination-bullet-active-next,
+.swiperForAdSection1 .swiper-pagination-bullet-active-prev,
+.swiperForReviewsSlicerComponent .swiper-pagination-bullet-active-prev {
+  width: 13px;
+  height: 13px;
+}
+
+.swiperForAdSection1 .swiper-pagination-bullet-active,
+.swiperForReviewsSlicerComponent .swiper-pagination-bullet-active {
+  background-color: #9F885E !important;
+  width: 30px;
+  height: 13px;
+  border-radius: 20px;
+}
+
+.swiperForReviewsSlicerComponent {
+  padding: 0 30px !important;
+}
+
+.swiperForReviewsSlicerComponent .swiper-wrapper {
+  margin: 20px 0 20px 0;
+}
+
+.swiper-button-disabled{
+  display: none !important;
+}
+
+@media screen and (max-width: 768px) {
+  .swiperForAdSection1 .swiper-button-prev::after,
+  .swiperForReviewsSlicerComponent .swiper-button-prev::after,
+  .swiperForAdSection1 .swiper-button-next::after,
+  .swiperForReviewsSlicerComponent .swiper-button-next::after {
+    min-width: 20px;
+    max-width: 20px;
+    max-height: 20px;
+  }
+
+  .swiperForAdSection1 .swiper-pagination-bullet-active-next,
+  .swiperForReviewsSlicerComponent .swiper-pagination-bullet-active-next,
+  .swiperForAdSection1 .swiper-pagination-bullet-active-prev,
+  .swiperForReviewsSlicerComponent .swiper-pagination-bullet-active-prev {
+    width: 6.5px;
+    height: 6.5px;
+  }
+
+  .swiperForAdSection1 .swiper-pagination-bullet-active,
+  .swiperForReviewsSlicerComponent .swiper-pagination-bullet-active {
+    background-color: #9F885E !important;
+    width: 15px;
+    height: 6.5px;
+    border-radius: 20px;
+  }
+
+  .swiperForReviewsSlicerComponent {
+    padding: 0 22px !important;
+  }
+}
+
+.flip-container {
+  perspective: 1000px;
+}
+
+.flip-container.flip .flipper {
+  transform: rotateY(180deg);
+}
+
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.front,
+.back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.front {
+  z-index: 2;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
